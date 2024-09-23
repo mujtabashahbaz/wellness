@@ -1,0 +1,8 @@
+<h1>Welcome, {{ request.user.username }}!</h1>
+<h2>Your Wellness Logs</h2>
+<ul>
+    {% for log in logs %}
+    <li>{{ log.date }} - {{ log.activity }} for {{ log.duration }} mins - {{ log.calories_burned }} calories burned</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'log_activity' %}">Log a new activity</a>
